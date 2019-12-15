@@ -1,0 +1,29 @@
+#RESET THE AMPL ENVIROMENT
+reset;
+
+#LOAD THE MODEL
+model project.mod;
+
+#LOAD THE DATA
+data project.dat;
+
+#CHANGE THE SOLVER (optional)
+option solver gurobi;
+
+#SOLVE
+solve;
+
+#SHOW RESULTS
+display S_usage;
+display S_usage_amount;
+display u_s1_usage;
+display u_s2_usage;
+display u_s2_heat_f_usage;
+display S_usage_cost;
+display D_usage_cost;
+display heat_factory_cost;
+
+display total_cost;
+display income;
+display profit;
+display total_deficiency;

@@ -1,0 +1,70 @@
+set S := S1 S2 S3; # S3 -> S2 used in heat factory. S2 + S3 <= 11 000
+set D := D1 D2;
+set W := W1 W2;
+set S_amount := L1 L2 L3;
+
+param S_max_prod :=
+	S1	11000
+	S2	11000
+	S3	0;
+	
+param S_limits :
+	L1		L2		L3 :=
+S1	2997	7523	9999999
+S2	2788	6621	9999999
+S3	2788	6621	9999999;
+
+param S_prices :
+	L1		L2		L3 :=
+S1	11		15		18
+S2	16		11		7
+S3	16		11		7;
+
+param D_from_S :
+	D1		D2 :=
+S1	0.2		0.8
+S2	0.7		0.3
+S3	0		0;
+
+param heat_factory_limits :=
+	L1	2750
+	L2	5500
+	L3	8250;
+
+param heat_factory_prices :=
+	L1	0
+	L2	10000
+	L3	40000;
+
+param factory_capacity := 17600;
+param heat_factory_capacity := 8250;
+param worker_price := 150;
+param worker_capacity := 100;
+
+param min_demand := 5500;
+param W_prices :=
+	W1	561
+	W2	515;
+	
+param train_capacity := 1600;
+param car_capacity := 16;
+param truck_capacity := 25;
+param train_price := 3310;
+param car_price := 1430;
+param truck_price := 1500;
+
+param reference_prod_cost := 400000;
+
+param reference_deficiency :=
+	W1	0
+	W2	0;
+	
+param max_cost := 1000000;
+
+param cost_lambda := 0.0000005;
+param deficiency_lambda :=
+	W1	1
+	W2	1;
+	
+param epsilon := 0.000025;
+param beta := 0.001;
